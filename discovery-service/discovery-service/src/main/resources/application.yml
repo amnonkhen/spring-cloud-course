@@ -1,0 +1,19 @@
+eureka:
+   instance:
+      instanceId: discover:discoverService:${random.value}
+      lease-renewal-interval-in-seconds: 10
+      lease-expiration-duration-in-seconds: 10
+      hostname: "$HOSTNAME"
+   server:
+      enableSelfPreservation: false
+      evictionIntervalTimerInMs: 1000
+      waitTimeInMsWhenSyncEmpty: 1
+      response-cache-auto-expiration-in-seconds: 10
+   client:
+      register-with-eureka: false
+      fetch-registry: false
+      registry-fetch-interval-seconds: 10
+      service-url:  
+        defaultZone: http://localhost:2000
+server: 
+  port: 2000
